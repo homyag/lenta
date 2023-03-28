@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from first_page import views
+
+from first_page.views import first_page
+from upload_page.views import upload_page
+
 
 urlpatterns = [
-    path('', views.first_page),
+    path('', first_page),
+    path('upload/', upload_page),
     path('admin/', admin.site.urls),
 
 ]
