@@ -1,6 +1,5 @@
-from django.core.files.uploadedfile import UploadedFile
 from django.shortcuts import render
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponse
 
 from lenta_labels.settings import UPLOAD_DIR
 from upload_page.forms import UploadFileForm
