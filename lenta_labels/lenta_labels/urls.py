@@ -18,10 +18,12 @@ from django.urls import path
 
 from first_page.views import first_page
 from upload_page.views import upload_file
+from upload_page.views import download_file
 
 urlpatterns = [
     path('', first_page),
     path('upload/', upload_file, name='upload_file'),
     path('admin/', admin.site.urls),
+    path('download/<str:file_name>/', download_file, name='download_file'),
 
 ]

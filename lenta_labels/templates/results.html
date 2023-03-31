@@ -5,8 +5,11 @@
     <title>Result</title>
 </head>
 <body>
-{% block content %}
-  <p>Результат: файл успешно добавлен и обработан</p>
-{% endblock %}
+{% if success %}
+  <p>{{ success }}</p>
+  {% if download_url %}
+    <a href="{{ download_url }}">Скачать файл</a>
+  {% endif %}
+{% endif %}
 </body>
 </html>
