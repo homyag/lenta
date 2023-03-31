@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
 from lenta_labels.settings import BASE_DIR
 import os
 from upload_page.utils import get_format
