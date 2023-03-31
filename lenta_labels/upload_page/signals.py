@@ -8,8 +8,12 @@ from upload_page.utils import get_format
 @receiver(post_save, sender=UploadFile)
 def apply_format_to_file(sender, instance, created, **kwargs):
     if created:
-        with open(instance.upload_file.path, 'r') as f:
+        print("Processing file format...")
+        with open(instance.format_file.path, 'r') as f:
             django_file = File(f)
             file_contents = django_file.read()
             instance.format = get_format(file_contents)
             instance.save()
+        with open(instance.format_file.path, 'w') as f:
+            f.write(instance.format)
+        print("File format processing completed.")

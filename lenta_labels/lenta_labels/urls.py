@@ -17,14 +17,11 @@ from django.contrib import admin
 from django.urls import path
 
 from first_page.views import first_page
-from upload_page.views import upload_page
 from upload_page.views import upload_file
-
 
 urlpatterns = [
     path('', first_page),
     path('upload/', upload_file, name='upload_file'),
-    #path('upload/', upload_page),
     path('admin/', admin.site.urls),
 
 ]
