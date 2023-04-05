@@ -7,9 +7,22 @@
 <body>
 {% if success %}
   <p>{{ success }}</p>
-  {% if download_url %}
-    <a href="{{ download_url }}">Скачать файл</a>
+  {% if download_url_lousy and download_url_mounted %}
+    <a href="{{ download_url_lousy }}" download><button>Скачать
+        вшивную этикетку</button></a>
+    <a href="{{ download_url_mounted }}" download><button>Скачать
+        навесную этикетку</button></a>
   {% endif %}
 {% endif %}
+
+{% if links %}
+  <p>Другие файлы для скачивания:</p>
+  <ul>
+    {% for link in links %}
+      <li><a href="{{ link }}">Скачать {{ link }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
 </body>
 </html>
